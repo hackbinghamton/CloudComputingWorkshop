@@ -1,14 +1,18 @@
 # Introduction to Alexa Skills
 
-##Overview
+## Overview
 **What you'll learn**
 In this section, you'll learn
-1. What Alexa skills are and what you can do with them
-2. How to make a basic Alexa skill
+ 1. What Alexa skills are and what you can do with them
+ 2. How to make a basic Alexa skill
+
 **Prerequisites**
-None!
+
+ 1. None!
+
 **Introduction**
 In this section, we'll go over what Alexa skills are with some examples. Then we'll provide a tutorial for making your own Alexa skill!
+
 ## What is an Alexa skill?
 Amazon Alexa is the voice service available on Amazon's home devices. It's a smart assistant, like Siri on Apple devices and Google Assistant on Google home devices. A home device is something like an Echo or a Google Home. Alexa skills are the different things Alexa can do. Think of Alexa skills as the apps for a home device. For example, there is a Spotify Alexa skill that enables you to stream music from your device.
 
