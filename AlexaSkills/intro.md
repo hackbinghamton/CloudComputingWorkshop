@@ -2,6 +2,7 @@
 
 ## Overview
 **What you'll learn**
+
 In this section, you'll learn
  1. What Alexa skills are and what you can do with them
  2. How to make a basic Alexa skill
@@ -11,6 +12,7 @@ In this section, you'll learn
  1. None!
 
 **Introduction**
+
 In this section, we'll go over what Alexa skills are with some examples. Then we'll provide a tutorial for making your own Alexa skill!
 
 ## What is an Alexa skill?
