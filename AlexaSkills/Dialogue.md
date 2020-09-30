@@ -25,9 +25,9 @@ For example, you might want to know if it's going to rain today. You might ask A
 Each of these utterances is mapped to the same intent, which is to give the chance of rain for today.
 
 ## Invoking your skill
-Each Alexa skill has an **invocation name**. This is like clicking on an app to open it, but instead you are saying the skill's name. Different utterances can invoke an Alexa skill. For example, "Alexa, ask Web m. d. what to do for a burn." and "Alexa, tell me what to do for a burn using Web m. d." both invoke the WebMD skill using its invocation name, "Web m. d.".
+Each Alexa skill has an **invocation name**. This is like clicking on an app to open it, but instead you are saying the skill's name. Different utterances can invoke an Alexa skill. For example, "Alexa, ask web m. d. what to do for a burn." and "Alexa, tell me what to do for a burn using web m. d." both invoke the WebMD skill using its invocation name, "Web m. d.".
 
-Your skill should have an invocation name. Think about whether you want to invoke the skill with intent (like the WebMD example above), without intent (ex. "Alexa, open Web m. d."), or have both options. Invoking a skill with intent is called a **one-shot utterance** since you are not having a full conversation with Alexa to get the answer you want. If you want to invoke the skill with intent, you need to think about the different ways the invocation name might be used in an utterance. Invocation without intent leads to **in-skill utterances**, which are more conversational.
+Your skill should have an invocation name. Think about whether you want to invoke the skill with intent (like the WebMD example above), without intent (ex. "Alexa, open web m. d."), or have both options. Invoking a skill with intent is called a **one-shot utterance** since you are not having a full conversation with Alexa to get the answer you want. If you want to invoke the skill with intent, you need to think about the different ways the invocation name might be used in an utterance. Invocation without intent leads to **in-skill utterances**, which are more conversational.
 
 ## Planning dialogue
 A key feature for smart assistant enabled devices is that they can converse with the user. We want this conversation to go smoothly. Before even starting to make your Alexa skill, you should plan the entire conversation your skill will hold with the user. Mapping out possible routes the conversation could go will ensure that you know all the intents and slots needed for the skill.
@@ -40,11 +40,11 @@ Here's a list of properly formatted utterances to the question, "What is your fu
 
  - {firstName} {lastName}
  - {firstName}
- - My full name is {firstName} {lastName}
- - My name is {firstName}
- - My name is {firstName} {lastName}
- - I'm {firstName} {lastName}
- - I'm {firstName}
+ - my full name is {firstName} {lastName}
+ - my name is {firstName}
+ - my name is {firstName} {lastName}
+ - i'm {firstName} {lastName}
+ - i'm {firstName}
 
 In this example, sometimes the user doesn't tell us their full name. The Alexa skill should be able to handle this and ask for the missing information.
 
@@ -58,3 +58,6 @@ Here's a short list of things to remember while coming up with utterances:
  -- Internal hyphens ("long-term")
  - You can make custom slots to decrease the number of utterances you have to write. If you find yourself writing utterances repeatedly, but interchanging one word every time, you can make a custom slot for those interchangeable words.
  - Don't forget to make lists of utterances for both in-skill and one-shot situations.
+
+## Exercise
+List 5 possible utterances for the question, "What is your favorite food?". Here's one to start you off: My favorite food is {food}. 
