@@ -25,7 +25,7 @@ For example, you might want to know if it's going to rain today. You might ask A
 Each of these utterances is mapped to the same intent, which is to give the chance of rain for today.
 
 ## Invoking your skill
-Each Alexa skill has an **invocation name**. This is like clicking on an app to open it, but instead you are saying the skill's name. Different utterances can invoke an Alexa skill. For example, "Alexa, ask web m. d. what to do for a burn." and "Alexa, tell me what to do for a burn using web m. d." both invoke the WebMD skill using its invocation name, "Web m. d.".
+Each Alexa skill has an **invocation name**. This is like clicking on an app to open it, but instead you are saying the skill's name. Different utterances can invoke an Alexa skill. For example, "Alexa, ask web m. d. what to do for a burn." and "Alexa, tell me what to do for a burn using web m. d." both invoke the WebMD skill using its invocation name, "web m. d.".
 
 Your skill should have an invocation name. Think about whether you want to invoke the skill with intent (like the WebMD example above), without intent (ex. "Alexa, open web m. d."), or have both options. Invoking a skill with intent is called a **one-shot utterance** since you are not having a full conversation with Alexa to get the answer you want. If you want to invoke the skill with intent, you need to think about the different ways the invocation name might be used in an utterance. Invocation without intent leads to **in-skill utterances**, which are more conversational.
 
@@ -60,4 +60,4 @@ Here's a short list of things to remember while coming up with utterances:
  - Don't forget to make lists of utterances for both in-skill and one-shot situations.
 
 ## Exercise
-List 5 possible utterances for the question, "What is your favorite food?". Here's one to start you off: My favorite food is {food}. 
+List 5 possible utterances for the question, "What is your favorite food?". Here's one to start you off: my favorite food is {food}. 
