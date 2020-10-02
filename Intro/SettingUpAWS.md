@@ -37,3 +37,5 @@ AWS has a Basic Pricing Model. You only pay for what you use and pay as you go.
 Remember to delete resources once you are done using them so you dont accumulate charges.
 
 # AWS Managment Console
+
+The AWS Managment Console is the place where yoou can access and manage the AWS cloud in one web interface. You can use over 150 AWS, build cloud based applications, and moniter users.
