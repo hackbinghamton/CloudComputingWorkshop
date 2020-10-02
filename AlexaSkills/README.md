@@ -1,6 +1,7 @@
 
 # Alexa Skills
 **NOTE: YOU DO NOT NEED TO OWN AN ALEXA ENABLED DEVICE TO DO THIS SECTION**
+
 Feel free to check out any of the sections! We recommend to do them in this order
 
  1. [Introduction](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/AlexaSkills/intro.md#introduction-to-alexa-skills)
