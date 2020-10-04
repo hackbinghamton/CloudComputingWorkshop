@@ -15,7 +15,7 @@ Before starting this section, you will need:
 
 1. To know what AWS is and have an AWS account - [Setting Up An AWS Account](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Intro/SettingUpAWS.md)
 
-2. Basic knowledge of creating static websites - you can refer back to our [Web Development Workshop](https://github.com/HackBinghamton/WebDevelopmentWorkshop)
+2. Basic knowledge of creating static pages with HTML - you can refer back to our [Web Development Workshop](https://github.com/HackBinghamton/WebDevelopmentWorkshop)
 
 ### Introduction
 #### Amazon S3
