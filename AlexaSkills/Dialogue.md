@@ -8,12 +8,13 @@
 
 **Prerequisites**
 
- 1. None
+ 1. None!
 
 **Introduction**
 A huge part of Alexa skills is the conversation between Alexa and the user. This section will help you prepare your skill to have smooth conversations and be able to handle different responses from the user.
+
 ## Dialogue terms
-First off let's review some terms that will be important in this section. The Amazon documentation we sent you to to build a basic Alexa skill briefly touched on intents, slots and utterances. Here's a refresher on that. An **intent** is the action you want Alexa to perform. A **slot** is a key piece of information needed to complete the intent. An **utterance** is a response outlined so that Alexa can utilize the information spoken to her. A user friendly Alexa skill should be equipped with many utterances to handle the different ways people might respond to her.
+First off let's review some terms that will be important in this section. The Amazon documentation from the last section briefly touched on intents, slots and utterances. Here's a refresher on that. An **intent** is the action you want Alexa to perform. A **slot** is a key piece of information needed to complete the intent. An **utterance** is a response outlined so that Alexa can utilize the information spoken to her. A user friendly Alexa skill should be equipped with many utterances to handle the different ways people might respond to her.
 
 For example, you might want to know if it's going to rain today. You might ask Alexa
 
