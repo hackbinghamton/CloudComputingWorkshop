@@ -34,7 +34,7 @@ Netflix runs almost all of its streaming through AWS because of scalability. Whe
 ### Step 1: Choosing an AMI
 AMI stands for Amazon Machine Image. This might sound intimidating, but it's essentially just a template for what kind of server you want to start. The AMI you choose will determine what OS and software will be installed on your server when it boots up.
 
-**Note**: If you want to make sure you stay within the free tier of AWS when starting an EC2 instance, make sure you check the Free Tier Only box on the left side of the screen.
+**Note:** If you want to make sure you stay within the free tier of AWS when starting an EC2 instance, **make sure you check the Free Tier Only box** on the left side of the screen.
 
 - **Select the AMI at the top of the list: Amazon Linux 2 AMI (HVM), SSD Volume Type, 64-bit.**
 
@@ -52,7 +52,7 @@ There are many other ways that you can configure an EC2 instance, including chan
 &nbsp;  
 
 ### Step 3: Launching the Instance
-On the review page, you can see all of the details of your EC2 instance. Here you should double check that you chose the correct AMI and Instance Type, as you could potentially be charged otherwise.
+On the review page, you can see all of the details of your EC2 instance. Here you should double check that you chose the correct AMI and Instance Type, as **you could potentially be charged otherwise**.
 
 - **Once you're ready, click the blue "Launch" button.**
 
@@ -71,9 +71,9 @@ Now you should see one item on the list, with an instance id of i-[a bunch of nu
 
 - **Click on the instance id and you should be taken to an overview of your instance's details. From here, click "Connect" in the top right, then click the orange "Connect" button on the next page.**
 
-This will open a new tab in your browser where you should be greeted by a blank terminal. You're now connected to and controlling your EC2 instance! From here you could do anything you like with the server, like host a web app.
+This will open a new tab in your browser where you should be greeted by a blank terminal. You're now connected to and controlling your EC2 instance! From here you could do anything you like with the server, like host a web app. **Just make sure to spin down your instance once you're done (see below), or else you could incur charges.**
 
-Note that you can also connect to your instance outside of your browser using ssh. Instructions on how to do this are available by going back to your AWS console tab, then clicking "SSH Client" instead of "EC2 Instance Connect"
+**Note:** You can also connect to your instance outside of your browser using *ssh*. Instructions on how to do this are available by going back to your AWS console tab, then clicking "SSH Client" instead of "EC2 Instance Connect"
 
 &nbsp;  
 
