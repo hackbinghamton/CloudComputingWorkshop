@@ -72,4 +72,8 @@ Like most cloud service providers, the basic pricing model for AWS is only pay f
 
 ### AWS Management Console
 
-The AWS Management Console is the place where you can access and manage the AWS cloud in one web interface. You can use over 150 AWS services, build cloud based applications, and monitor users.
+After you log in to your AWS account, you are taken to the AWS Management Console. This is the place where you access and manage the AWS cloud and its services in one web interface.
+
+It lists all the services organized under categories like compute, storage, database, etc. When you click on a service, it will take you to its dashboard where you can manage its resources and settings. At the top of the page (left of the navigation bar), the "Services" drop down will pull up a full list of services as well.
+
+To the right of the navigation bar, you can see your name and it will give you a drop down list to access your profile/account. You will also see a "N. Virginia" drop down list where you can specify the current region where your resources are managed (if applicable depending on the service). A region is a location where AWS holds their physical data centers. The default region is set to "US East (N. Virginia)", and you can leave that as the region for this workshop.
