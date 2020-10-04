@@ -17,17 +17,17 @@ Before starting this section, you will need:
 
 2. Basic knowledge of creating static websites - you can refer back to our [Web Development Workshop](https://github.com/HackBinghamton/WebDevelopmentWorkshop)
 
-## Introduction
-### Amazon S3
+### Introduction
+#### Amazon S3
 Amazon S3 stands for Amazon Simple Storage Service. As the name implies, S3 is a storage provider on the cloud designed for simplicity. You can think of it as Amazon's version of Google Drive but on a larger scale.
 
-### S3 Basic Concepts
+#### S3 Basic Concepts
 
 A *bucket* is a storage container, the place where you put your files (you can basically think of it as a folder). Your files are called *objects* and they must be placed in a *bucket*. S3 is an object-based storage, so do not use it for installing operating systems or databases.
 
 S3, as a simple, durable, scalable, and secure service, is often used in relation with other AWS services. You can use S3 as a standalone storage provider just like Google Drive, but Amazon provides many additional features one of which is static web hosting.
 
-## Steps
+## Steps to Create a Static Website on S3
 
 It's time to begin creating a static website on Amazon S3. We'll go step by step and explain anything relevant along the way. There's a lot of details that can be covered, but we will not mention everything here. If you would like to explore the topics further on your own, just be aware of the free tier limits.
 
@@ -74,7 +74,7 @@ Go to the properties panel of the bucket, and you will see "static website hosti
 * The *error document* is the page that will show up if something goes wrong with your website. You can leave it blank for now.
 * The *redirection rules* are rules written in XML that you can write to reroute requests based on conditions. You can also leave this part alone.
 
-Take note of the endpoint link. That will be the url to your static website.
+Take note of the endpoint link. That will be the URL to your static website.
 
 Now hit save.
 
@@ -92,14 +92,14 @@ Now that you have a static website up and running, continue to familiarize yours
 
 ## Additional mentions
 
-As you can see from your website url, your website is available on the Amazon S3 endpoint. If you want/have a registered domain name that you want to change it to, it is possible to do so. You can learn more about how to do that [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html). Registering a domain name will cost money!
+As you can see from your website URL, your website is available on the Amazon S3 endpoint. If you want/have a registered domain name that you want to change it to, it is possible to do so. You can learn more about how to do that [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html). Registering a domain name will cost money!
 
-From your url, you can also see the website uses HTTP instead of HTTPS. S3 alone does not support HTTPS, so if you want to serve your static website over a secure protocol, you would need to utilize another AWS service called CloudFront. CloudFront is not part of free tier, but if you still want to read about it, you can check [this link](https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website/) out.
+From your URL, you can also see the website uses HTTP instead of HTTPS. S3 alone does not support HTTPS, so if you want to serve your static website over a secure protocol, you would need to utilize another AWS service called CloudFront. CloudFront is not part of free tier, but if you still want to read about it, you can check [this link](https://aws.amazon.com/premiumsupport/knowledge-center/cloudfront-serve-static-website/) out.
 
-Web browsers follow a security model called the same-origin policy where a browser only permits requests contained within the same origin. For example, if a script from domain A sends a request domain B to retrieve data, the browser will block that request. S3 follows the same policy, so you may encounter blocking errors when building your website. In order to alleviate the strict restrictions, you need to enable CORS, which stands cross-origin resource sharing. It allows you to configure rules to allow web applications in one domain to interact with other domains, preventing requests from being blocked. You can enable CORS in the bucket's permissions, then pass in a configuration file written in XML which you can learn more about [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors).
+Web browsers follow a security model called the same-origin policy where a browser only permits requests contained within the same origin. For example, if a script from domain A sends a request to domain B to retrieve data, the browser will block that request. S3 follows the same policy, so you may encounter blocking errors when building your website. In order to alleviate the strict restrictions, you need to enable CORS, which stands for cross-origin resource sharing. It allows you to configure rules to allow web applications in one domain to interact with other domains, preventing requests from being blocked. You can enable CORS in the bucket's permissions, then pass in a configuration file written in XML; you can learn more about that [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html#how-do-i-enable-cors).
 
 ## Terminating Your S3 Buckets
 
-Before you leave this section of the workshop, delete your objects and buckets just to ensure that you aren't accruing AWS resources. If you are certain that you want to keep your S3 bucket, just be aware of the free tier limits.
+Before you leave this section of the workshop, delete your objects and buckets just to ensure that you aren't accruing AWS resources. If you are certain that you want to keep your S3 bucket(s), just be aware of the free tier limits.
 
 Head back to the main S3 console page where it lists all your buckets. Select the bucket and press the "delete" button. All the objects within the bucket will also be deleted. Read the warning and confirm your deletion by entering the name of your bucket.
