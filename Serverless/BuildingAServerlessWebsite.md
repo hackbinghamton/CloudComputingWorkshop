@@ -15,6 +15,7 @@ by the cloud provider (AWS).
 2. A pay for what you use pricing model. If your website requires 24/7 uptime but is only used for 12 hours of the day,
 you're paying for 12 wasted hours of compute time. A serverless website will only incur fees when it is used.
 
+
 ## Serverless AWS Services
 AWS offers several serverless services (phew, what a sentence!). Here are some notable services - the bolded ones will 
 be covered in this section.
@@ -29,6 +30,7 @@ DynamoDB - A NoSQL, document-based database.
 
 SQS - The first AWS service ever created, this allows tasks to be produced and consumed from a shared queue.
 
+
 ## Our First Serverless Website 
 We're going to create a serverless website that allows users to put images on a shared digital refrigerator (yes, literally).
 We'll accomplish this goal by doing the following:
@@ -40,6 +42,7 @@ We'll accomplish this goal by doing the following:
 4. Creating static code for our website that calls the REST API and gives it an image URL
 
 Let's dive in!
+
 
 ## Setting Up Our S3 Bucket
 *Disclaimer: This section assumes that you've worked with S3 before, so it will be a little less descriptive than the following
@@ -53,4 +56,39 @@ sections. If you find yourself struggling, check out the S3 section of our works
 granting public read access to both of them.
 
 
+## Creating a Lambda Function
+1. Head back over to the AWS console. You'll find Lambda under **Computer**, below EC2. Once there, you should see this
+view:
+    <Image Here>
+2. Go to "Create a Function".
+    1. Select "Author from Scratch"
+    2. Name your function something descriptive (our code will be adding something to the fridge, so why not AddToFridge?)
+    3. Choose **Python 3.7** as the runtime.
+    <Image Here>
+3. After a few seconds, our Lambda function will be created and ready for configuration. The screen will look something like
+    <Image Here>
+4. The first thing we're going to do is make sure our Lambda function can actually access our S3 bucket. To do so, head 
+over to the "Permissions" tab and click on the hyperlink to our execution role.
+    <Image Here>
+This brings us to the IAM console, which will allow us to modify the policies of our Lambda's role.
+    <Image Here>
+5. Press "Attach Policies", search for AmazonS3FullAccess, and add that policy to the executor role.
+    <Image Here>
+6. With that out of the way, let's take a look at the `lambda_function.py` file located in this repository. It's not 
+important to understand what's going on with the image manipulation code, but it is important to understand the code
+that interacts with our S3 bucket. 
+    * All Python lambda function files must be called `lambda_function.py`
+    * They must also have an entry function with the signature `lambda_handler(event, context)`
+7. Replace the bucket name with your actual bucket name and add `lambda_function.py` to `function.zip`
+    * This zip file contains the libraries you need to run this code on AWS Lambda. It was, in the most unparliamentary language,
+    a MASSIVE pain in the ass to get PIL working with Lambda, so using this zip file will make your life much easier. 
+    * On Linux and OS X, can do `zip -g function.zip lambda_function.py`
+    * Not sure on Windows, but all you have to do is replace the `lambda_function.py` in the zip file with your own
+8. Head back to the configuration view in the Lambda console. Scroll down to the **Function code** section, go to **Actions**, 
+and select **Upload a .zip file**
+    <Image Here>
+    
+
+    
+    
 
