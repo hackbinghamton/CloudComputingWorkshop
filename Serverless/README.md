@@ -68,7 +68,7 @@ sections. If you find yourself struggling, check out the S3 section of our works
 2. Create a new bucket
 3. Leave the "configure options" section with its preset values
 4. **Disable** block all public access, since we're only working with two files that need to be public anyways.
-5. Finish creation, and upload the website.html and fridge.png files provided in this directory of the repository, 
+5. Finish creation, and upload the `index.html` and `fridge.png` files provided in this directory of the repository, 
 granting public read access to both of them.
 6. Go to `fridge.png`'s properties, and update its metadata so that the `Content-Type` is "image/png".
 
