@@ -71,8 +71,6 @@ def lambda_handler(event, context):
     bucket_name = "cfiutak1-hackbu-demo"
     image_url = json.loads(event["body"])["image_url"]
 
-
-
     fridge = FridgeAccessor(bucket_name)
     fridge.write_new_image_to_s3(image_url)
 
