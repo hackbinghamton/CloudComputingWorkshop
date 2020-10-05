@@ -54,6 +54,7 @@ sections. If you find yourself struggling, check out the S3 section of our works
 4. **Disable** block all public access, since we're only working with two files that need to be public anyways.
 5. Finish creation, and upload the website.html and fridge.png files provided in this directory of the repository, 
 granting public read access to both of them.
+6. Go to `fridge.png`'s properties, and update its metadata so that the `Content-Type` is "image/png".
 
 
 ## Creating a Lambda Function
@@ -111,7 +112,7 @@ If all goes well, you'll receive a status code of 200.
 
 
 ## Creating the Fridge Webpage
-    
+
 ## Room for Improvement
 This demo actually isn't perfect. Perhaps the most glaring issue pertains to security - making everything public in an S3
 bucket can be dangerous (which is why AWS warned us when we did it), and our Lambda function could've used a narrower policy
