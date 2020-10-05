@@ -1,6 +1,22 @@
 # Building a Serverless Website
 
-## Introduction to Serverless
+## Overview
+**What you'll learn**
+
+In this section, you'll learn
+1. What serverless computing is
+2. How to set up Amazon Lambda functions to interface with APIs
+
+...and you'll build a website using all of the above technologies!
+
+**Prerequisites**
+1. An AWS Account
+2. How to set up a static website using S3 - [Hosting a Static Website Using Amazon S3](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/S3/StaticWebsiteUsingS3.md)
+
+## Introduction
+
+Serverless computing is a model of cloud programming where a cloud provider operates the server which handles back-end needs. This can be really useful, because it allows you to run large applications without needing to purchase and maintain servers!
+
 A reasonable person might find themselves scratching their head upon hearing the phrase "serverless". After all, how can 
 a website exist without some kind of servers powering it? What kind of machinery allows this to happen? Is serverless
 more expensive than a server-based approach?
