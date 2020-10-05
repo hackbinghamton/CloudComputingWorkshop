@@ -63,7 +63,7 @@ class FridgeAccessor:
         new_image_bytes = BytesIO()
         fridge_image.save(new_image_bytes, format="PNG")
 
-        self.bucket.put_object(Key="fridge.png", Body=new_image_bytes.getvalue())
+        self.bucket.put_object(Key="fridge.png", Body=new_image_bytes.getvalue(), ACL='public-read')
 
 
 def lambda_handler(event, context):
@@ -71,12 +71,17 @@ def lambda_handler(event, context):
     bucket_name = "cfiutak1-hackbu-demo"
     image_url = json.loads(event["body"])["image_url"]
 
+
+
     fridge = FridgeAccessor(bucket_name)
     fridge.write_new_image_to_s3(image_url)
 
     return {
         'isBase64Encoded': False,
         'statusCode': 200,
-        'headers': {},
+        'headers': {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+        },
         'body': image_url
     }
