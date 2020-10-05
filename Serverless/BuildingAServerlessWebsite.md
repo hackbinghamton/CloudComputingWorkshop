@@ -58,23 +58,14 @@ granting public read access to both of them.
 
 
 ## Creating a Lambda Function
-1. Head back over to the AWS console. You'll find Lambda under **Computer**, below EC2. Once there, you should see this
-view:
-    <Image Here>
+1. Head back over to the AWS console. You'll find Lambda under **Computer**, below EC2.
 2. Go to "Create a Function".
     1. Select "Author from Scratch"
     2. Name your function something descriptive (our code will be adding something to the fridge, so why not AddToFridge?)
     3. Choose **Python 3.7** as the runtime.
-    <Image Here>
-3. After a few seconds, our Lambda function will be created and ready for configuration. The screen will look something like
-    <Image Here>
-4. The first thing we're going to do is make sure our Lambda function can actually access our S3 bucket. To do so, head 
-over to the "Permissions" tab and click on the hyperlink to our execution role.
-    <Image Here>
-This brings us to the IAM console, which will allow us to modify the policies of our Lambda's role.
-    <Image Here>
+3. After a few seconds, our Lambda function will be created and ready for configuration.
+4. The first thing we're going to do is make sure our Lambda function can actually access our S3 bucket. To do so, head over to the "Permissions" tab and click on the hyperlink to our execution role. This brings us to the IAM console, which will allow us to modify the policies of our Lambda's role.
 5. Press "Attach Policies", search for AmazonS3FullAccess, and add that policy to the executor role.
-    <Image Here>
 6. With that out of the way, let's take a look at the `lambda_function.py` file located in this repository. It's not 
 important to understand what's going on with the image manipulation code, but it is important to understand the code
 that interacts with our S3 bucket. 
@@ -86,37 +77,24 @@ that interacts with our S3 bucket.
     * On Linux and OS X, can do `zip -g function.zip lambda_function.py`
     * Not sure on Windows, but all you have to do is replace the `lambda_function.py` in the zip file with your own
 8. Head back to the configuration view in the Lambda console. Scroll down to the **Function code** section, go to **Actions**, 
-and select **Upload a .zip file**
-    <Image Here>
+and select **Upload a .zip file**.
 9. We need to increase the capacity and timeout of our Lambda function, since this task will take a bit long to perform.
 Go to **Basic settings**, press **Edit**, and set the memory to **512 MB** and the timeout to **2 minutes**
     
-
 ## Creating an API for Our Lambda Function
 1. Head over to the AWS console. Scroll down to **Networking and Content Delivery**, where you'll find **API Gateway**,
 which is the service we'll be using to create an API endpoint for our Lambda function.
-2. Select **Build a REST API**
-    <Image Here>
+2. Select **Build a REST API**.
 3. Create a **New API**, naming it something descriptive and leaving the two other fields as their defaults.
-    <Image Here>
-4. Once the API is created, you'll see something like
-    <Image here>
-5. Go to **Actions > Create Method > POST** and click the checkmark. If done correctly, you'll see the following:
-    <Image here>
-6. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function
-will be whatever we created earlier.
-    <Image here>
-7. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`.
-If all goes well, you'll receive a status code of 200.
-    <Image Here>
-8. Next, we need to configure our API to enable Cross Origin Resource Sharing (CORS). The bane of all web developers, a 
-misconfigured CORS policy will prevent other websites from calling our API. To do this, go to **Actions** and select 
-**Enable CORS**. 
-9. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**.
-Create a new stage with the name `prod` and hit deploy.
-
+4. Go to **Actions > Create Method > POST** and click the checkmark.
+5. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function will be whatever we created earlier.
+6. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`. If all goes well, you'll receive a status code of 200.
+7. Next, we need to configure our API to enable Cross Origin Resource Sharing (CORS). The bane of all web developers, a misconfigured CORS policy will prevent other websites from calling our API. To do this, go to **Actions** and select **Enable CORS**. 
+8. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**. Create a new stage with the name `prod` and hit deploy.
 
 ## Creating the Fridge Webpage
+
+Check out the `website.html` file in this repo to see how to integrate the API with an HTML file that you host on S3. Make sure to swap out the active API link! 
 
 ## Room for Improvement
 This demo actually isn't perfect. Perhaps the most glaring issue pertains to security - making everything public in an S3
@@ -126,5 +104,7 @@ than the S3 Full Access policy. If you're curious, read more about AWS Identity 
 The other glaring area of improvement (to me, at least - there could be more!) is the inability of this website to handle 
 race conditions. If two users submit a new image at the same time, it's very possible that one of their images doesn't get 
 added to the fridge. To prevent this, a good approach would be to first add all new image requests to a queue with AWS 
-Simple Queue Service, which was alluded to at the beginning of this workshop. 
+Simple Queue Service, which was alluded to at the beginning of this workshop.
+
+**Make sure to spin down all your resources when you are done!**
 
