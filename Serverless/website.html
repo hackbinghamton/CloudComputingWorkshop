@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h2>Serverless Computing!</h2>
-
-<input type="text" id="my-url" value="Enter your URL here">
-
-<p>Click the submit button to YEET the url to your S3 bucket</p>
-
-<button onclick="processImageURL()">Submit</button>
-
-<p id="demo"></p>
-
 <script>
 
 
 function processImageURL() {
     let url = document.querySelector("#my-url").value;
 
-    # REPLACE THIS URL WITH YOUR API'S URL
-    fetch("https://arjdovif30.execute-api.us-east-1.amazonaws.com/prod", {
+    // REPLACE THIS URL WITH YOUR API'S URL
+    fetch("https://xwiifyk6t2.execute-api.us-east-1.amazonaws.com/prod", {
           "method": "POST",
           "headers": {
                 "Content-Type": "application/json; charset=utf-8"
@@ -33,6 +21,22 @@ function processImageURL() {
     .catch(console.error.bind(console));
 }
 </script>
+
+<body>
+
+
+
+<h2>Serverless Computing!</h2>
+
+<input type="text" id="my-url" value="Enter your URL here">
+
+<p>Click the submit button to YEET the url to your S3 bucket</p>
+
+<button onclick="processImageURL()">Submit</button>
+
+<p id="demo"></p>
+
+
 
 </body>
 </html>
