@@ -26,8 +26,11 @@ class FridgeAccessor:
     def __init__(self, bucket_name: str):
         self.bucket_name = bucket_name
 
+        # Create a bucket Python object for the given S3 bucket name.
         s3 = boto3.resource("s3")
         self.bucket = s3.Bucket(bucket_name)
+
+        # Create a file (object) Python object for the given file name.
         self.fridge_object = self.bucket.Object("fridge.png")
 
     def get_current_fridge_image(self) -> PIL.Image:
@@ -63,17 +66,25 @@ class FridgeAccessor:
         new_image_bytes = BytesIO()
         fridge_image.save(new_image_bytes, format="PNG")
 
+        # put_object does an HTTP PUT for a given object, which creates the object, or updates it if it already exists.
+        # Key is the file name/path
+        # Body is the content to upload to the file
+        # ACL='public-read' makes sure the uploaded file is still publicly viewable
         self.bucket.put_object(Key="fridge.png", Body=new_image_bytes.getvalue(), ACL='public-read')
 
 
 def lambda_handler(event, context):
     # CHANGE THIS BUCKET NAME
     bucket_name = "cfiutak1-hackbu-demo"
+
+    # Our lambda function will require the request body to have {"image_url": "<some_url>"} to work.
     image_url = json.loads(event["body"])["image_url"]
 
     fridge = FridgeAccessor(bucket_name)
     fridge.write_new_image_to_s3(image_url)
 
+    # Some of these are required by the Lambda proxy integration in API Gateway. The headers are required to enable CORS
+    # with API Gateway, so that our website can invoke the API without getting blocked by the browser.
     return {
         'isBase64Encoded': False,
         'statusCode': 200,
