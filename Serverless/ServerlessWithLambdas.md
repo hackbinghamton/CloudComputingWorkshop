@@ -19,10 +19,12 @@ Serverless computing is a model of cloud programming where a cloud provider oper
 
 **Our Project**
 
-We're going to combine a lot of the information we've learned so far in cloud computing and web development! First, we'll create a static website which accepts a URL for an image and sends that URL to an API. This API will be registered with AWS API gateway Then, it'll put the image on our glorious HackBU fridge using a Lambda function.
+We're going to combine a lot of the information we've learned so far in cloud computing and web development! First, we'll create a static website which accepts a URL for an image and sends that URL to an API. This API will be registered with AWS API Gateway. Then, it'll paste the image onto our glorious HackBU fridge using a Lambda function.
 
 ## Setting Up the Static Website
 
 For information about basic HTML, check out our [Web Development Workshop!](https://github.com/HackBinghamton/WebDevelopmentWorkshop) All you'll need is HTML and a little bit of JS to take user input. [This tutorial](https://www.w3schools.com/jsref/dom_obj_text.asp) also has useful information on how to accept user input in your static website.
 
 We also have a [tutorial about setting up S3 buckets](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/S3/StaticWebsiteUsingS3.md) where you can learn to upload your website to a bucket.
+
+### Next Section: [Building a Serverless Website](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/serverless/Serverless/BuildingAServerlessWebsite.md)
