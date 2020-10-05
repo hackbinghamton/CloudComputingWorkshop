@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+
+function processImageURL() {
+    let url = document.querySelector("#my-url").value;
+
+    // REPLACE THIS URL WITH YOUR API'S URL
+    fetch("https://1wpcc71lya.execute-api.us-east-1.amazonaws.com/prod", {
+          "method": "POST",
+          "headers": {
+                "Content-Type": "application/json; charset=utf-8"
+          },
+          "body": JSON.stringify({
+            image_url: url
+        })
+    })
+    .then((res) => res.text())
+    .then(console.log.bind(console))
+    .catch(console.error.bind(console));
+
+    var img = document.createElement("img");
+    // REPACE THIS URL WITH YOUR BUCKET'S FRIDGE URL
+    img.src = "https://hackbu-fridge-mfarrel8.s3.amazonaws.com/fridge.png";
+    img.width = 200;
+    img.height = 444;
+
+    document.body.appendChild(img);
+}
+
+var img = document.getElementById("myImg");
+
+
+</script>
+
+<body>
+
+
+
+<h2>Serverless Computing!</h2>
+
+<input type="text" id="my-url" value="Enter your URL here">
+
+<p>Click the submit button to YEET the url to your S3 bucket</p>
+
+<button onclick="processImageURL()">Submit</button>
+
+<p id="demo"></p>
+
+
+
+</body>
+</html>
