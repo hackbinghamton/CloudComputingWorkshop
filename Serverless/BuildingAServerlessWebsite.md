@@ -30,3 +30,27 @@ DynamoDB - A NoSQL, document-based database.
 SQS - The first AWS service ever created, this allows tasks to be produced and consumed from a shared queue.
 
 ## Our First Serverless Website 
+We're going to create a serverless website that allows users to put images on a shared digital refrigerator (yes, literally).
+We'll accomplish this goal by doing the following:
+1. Creating an S3 bucket that will contain
+    1. The most recent fridge picture
+    2. Our website's static code
+2. Creating an AWS Lambda function that adds a new image to the fridge and updates the fridge picture in the S3 bucket
+3. Creating a REST API in API Gateway that invokes this Lambda function
+4. Creating static code for our website that calls the REST API and gives it an image URL
+
+Let's dive in!
+
+## Setting Up Our S3 Bucket
+*Disclaimer: This section assumes that you've worked with S3 before, so it will be a little less descriptive than the following
+sections. If you find yourself struggling, check out the S3 section of our workshop!*
+
+1. Go to the AWS console > Storage > S3
+2. Create a new bucket
+3. Leave the "configure options" section with its preset values
+4. **Disable** block all public access, since we're only working with two files that need to be public anyways.
+5. Finish creation, and upload the website.html and fridge.png files provided in this directory of the repository, 
+granting public read access to both of them.
+
+
+
