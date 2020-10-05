@@ -87,8 +87,38 @@ that interacts with our S3 bucket.
 8. Head back to the configuration view in the Lambda console. Scroll down to the **Function code** section, go to **Actions**, 
 and select **Upload a .zip file**
     <Image Here>
+9. We need to increase the capacity and timeout of our Lambda function, since this task will take a bit long to perform.
+Go to **Basic settings**, press **Edit**, and set the memory to **512 MB** and the timeout to **2 minutes**
     
 
+## Creating an API for Our Lambda Function
+1. Head over to the AWS console. Scroll down to **Networking and Content Delivery**, where you'll find **API Gateway**,
+which is the service we'll be using to create an API endpoint for our Lambda function.
+2. Select **Build a REST API**
+    <Image Here>
+3. Create a **New API**, naming it something descriptive and leaving the two other fields as their defaults.
+    <Image Here>
+4. Once the API is created, you'll see something like
+    <Image here>
+5. Go to **Actions > Create Method > POST** and click the checkmark. If done correctly, you'll see the following:
+    <Image here>
+6. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function
+will be whatever we created earlier.
+    <Image here>
+7. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`.
+If all goes well, you'll receive a status code of 200.
+    <Image Here>
+
+
+## Creating the Fridge Webpage
     
-    
+## Room for Improvement
+This demo actually isn't perfect. Perhaps the most glaring issue pertains to security - making everything public in an S3
+bucket can be dangerous (which is why AWS warned us when we did it), and our Lambda function could've used a narrower policy
+than the S3 Full Access policy. If you're curious, read more about AWS Identity Access Management and AWS security best practices.
+
+The other glaring area of improvement (to me, at least - there could be more!) is the inability of this website to handle 
+race conditions. If two users submit a new image at the same time, it's very possible that one of their images doesn't get 
+added to the fridge. To prevent this, a good approach would be to first add all new image requests to a queue with AWS 
+Simple Queue Service, which was alluded to at the beginning of this workshop. 
 
