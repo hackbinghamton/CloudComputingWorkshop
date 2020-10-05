@@ -110,7 +110,7 @@ which is the service we'll be using to create an API endpoint for our Lambda fun
 
 ## Creating the Fridge Webpage
 
-Check out the `website.html` file in this repo to see how to integrate the API with an HTML file that you host on S3. Make sure to swap out the active API link! 
+Check out the `index.html` file in this repo to see how to integrate the API with an HTML file that you host on S3. Make sure to swap out the active API link! 
 
 ## Room for Improvement
 This demo actually isn't perfect. Perhaps the most glaring issue pertains to security - making everything public in an S3
