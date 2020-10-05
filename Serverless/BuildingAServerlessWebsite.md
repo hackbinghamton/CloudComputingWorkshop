@@ -109,7 +109,10 @@ will be whatever we created earlier.
 7. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`.
 If all goes well, you'll receive a status code of 200.
     <Image Here>
-8. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**.
+8. Next, we need to configure our API to enable Cross Origin Resource Sharing (CORS). The bane of all web developers, a 
+misconfigured CORS policy will prevent other websites from calling our API. To do this, go to **Actions** and select 
+**Enable CORS**. 
+9. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**.
 Create a new stage with the name `prod` and hit deploy.
 
 
