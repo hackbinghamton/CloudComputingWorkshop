@@ -3,14 +3,16 @@
 ## Overview
 **What you'll learn**
 
-In this section, you'll learn
+In this section, you'll learn:
  1. What an EC2 Instance is
  2. How to run one for free
  3. How to shut one down
 
 **Prerequisites**
 
- 1. An AWS Account
+Before starting this section, you will need:
+
+ 1. An AWS Account - [Setting Up an AWS Account](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Intro/SettingUpAWS.md)
 
 **Introduction**
 
@@ -82,10 +84,12 @@ Now that you've spun up an EC2 instance, it's important to know how to take one 
 
 - **Navigate your way back to the EC2 Instances Page, either by going back or by going through the EC2 Management Console again.**
 
-- **Tick the box to the left of your instance, then click "Actions" in the top right. In the drop down menu click "Instance State" then "Terminate Instance". Note: You can also click "Stop Instance" if you want to pause an instance but keep it in existence.**
+- **Tick the box to the left of your instance, then click "Actions" in the top right. In the drop down menu click "Instance State" then "Terminate Instance".** 
+  - Note: You can also click "Stop Instance" if you want to pause an instance but keep it in existence. A stopped instance itself won't incur charges.
+
 
 - **Now just press the "Terminate" button, and you should see that your instance enters the "Shutting Down" state. Wait a few seconds then refresh the page, and you should see that it has entered the "Terminated" state.**
 
 For now the instance will remain visible in the console, but after about an hour it should disappear.
 
-If you were working at a company that uses AWS, you wouldn't just create and delete instances all the time like this. Generally you would keep a certain number of instances created, then shut them down or start them up as needed. This way they would retain all of their properties like tags, security groups, etc. But since our instance wasn't very difficult to create anyways, it's easier to just destroy it for now.
+If you were working at a company that uses AWS, you wouldn't just create and delete instances all the time like this. Generally, you would keep a certain number of instances created, then shut them down or start them up as needed. This way they would retain all of their properties like tags, security groups, etc. But since our instance wasn't very difficult to create anyways, it's easier to just destroy it for now.
