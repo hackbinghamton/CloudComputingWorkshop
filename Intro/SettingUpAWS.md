@@ -17,13 +17,13 @@ None!
 
 #### What is cloud computing?
 
-Cloud computing is the use of computing services - like servers, storage, databases, networking, and software - over the internet. Instead of having to manage these resources yourself, which can be complicated, expensive, and time consuming, you can access and use these resources managed by some other company. Essentially, you can rent out resources from a cloud provider (like AWS) on an on-demand basis without worrying about the underlying management.
+Cloud computing is the use of computing services - like servers, storage, databases, networking, and software - over the internet. Instead of having to manage these resources yourself, which can be complicated, expensive, and time consuming, you can access and use resources managed for you by a cloud provider.
 
 #### What are the benefits of cloud computing?
 
-Cloud computing allows your technology developments to be increasingly flexible, cost effective, and scalable.
+Cloud computing allows your technology developments to be flexible, cost effective, and scalable.
 
-Because you can request resources from a cloud provider on an on-demand basis, you can easily spin up or spin down resources and take advantages of existing services. Without the need to buy and manage resources yourself, you can focus on innovating and building your ideas much faster. This fundamental aspect of cloud computing also allows developers, like yourselves, the freedom to explore and experiment without upfront commitment.
+Because you can limit your resources use to exactly as much as you need at any given time when working with a cloud provider, you can easily spin up or spin down resources and alter which of the offered services your project uses. Without the need to buy and manage resources yourself, you'll have more time to focus on the central ideas of your project. The difference in price between renting a dedicated server and renting cloud space, also means that for users on a budget, cloud grants a new freedom to explore and experiment without upfront commitment.
 
 By taking advantage of the cloud, you avoid spending a vast amount of money on resources like hardware, software, servers, costs for maintaining data centers, time, and labor.
 
