@@ -19,7 +19,7 @@ Before starting this section, you will need:
 
 ### Introduction
 #### Amazon S3
-Amazon S3 stands for Amazon Simple Storage Service. As the name implies, S3 is a storage provider on the cloud designed for simplicity. You can think of it as Amazon's version of Google Drive but on a larger scale, and with extra features.
+Amazon S3 stands for Amazon Simple Storage Service. As the name implies, S3 is a storage provider on the cloud designed for simplicity. You can think of it as Amazon's version of Google Drive, but on a larger scale with extra features.
 
 #### S3 Basic Concepts
 
@@ -53,7 +53,7 @@ When you click on the blue "Create Bucket" button, you will see the bucket prope
 
 ### 3) Upload objects
 
-Now that you made a bucket, click on it to see the contents. To add objects to this bucket, click on the "upload" button or drag and drop the files. You can upload pretty much any type of file -- text, images, videos, html files, etc. There is unlimited space within a bucket, and the maximum size of a *single object* is 5 TB.
+Now that you made a bucket, click on it to see the contents. To add objects to this bucket, click on the "upload" button or drag and drop the files. You can upload pretty much any type of file -- text, images, videos, html files, etc. There is unlimited space within a bucket, but the maximum size of a *single object* is 5 TB.
 
 **Create your index.html that will act as the default home page of your website**, and upload that to your bucket. You will see a panel to set your object's properties, but for now, you can leave everything as its default settings and hit the "Upload" button on the bottom left.
 
