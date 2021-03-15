@@ -100,11 +100,11 @@ Go to **Configuation**, press **Basic Configuation** on the sidebar, press **Edi
 1. Head over to the AWS console. Scroll down to **Networking and Content Delivery**, where you'll find **API Gateway**,
 which is the service we'll be using to create an API endpoint for our Lambda function.
 2. Select **Create API**, then choose **REST API type**, and hit **Build**. Name it something descriptive and leaving the two other fields as their defaults and then hit **Create API**.
-4. Go to **Actions > Create Method > POST** and click the checkmark.
-5. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function will be whatever we created earlier.
-6. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`. If all goes well, you'll receive a status code of 200.
-7. Next, we need to configure our API to enable Cross Origin Resource Sharing (CORS). The bane of all web developers, a misconfigured CORS policy will prevent other websites from calling our API. To do this, go to **Actions** and select **Enable CORS**. 
-8. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**. Create a new stage with the name `prod` and hit deploy.
+3. Go to **Actions > Create Method > POST** and click the checkmark.
+4. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function will be whatever we created earlier.
+5. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`. If all goes well, you'll receive a status code of 200.
+6. Next, we need to configure our API to enable Cross Origin Resource Sharing (CORS). The bane of all web developers, a misconfigured CORS policy will prevent other websites from calling our API. To do this, go to **Actions** and select **Enable CORS**. 
+7. Lastly, we'll need to deploy our API for the changes to take effect. Go to **Actions** and select **Deploy API**. Create a new stage with the name `prod` and hit deploy.
 
 ## Creating the Fridge Webpage
 
