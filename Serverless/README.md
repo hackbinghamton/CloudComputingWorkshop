@@ -15,8 +15,6 @@ In this section, you'll learn
 
 ## Introduction
 
-Serverless computing is a model of cloud programming where a cloud provider operates the server which handles back-end needs. This can be really useful, because it allows you to run large applications without needing to purchase and maintain servers!
-
 A reasonable person might find themselves scratching their head upon hearing the phrase "serverless". After all, how can 
 a website exist without some kind of servers powering it? What kind of machinery allows this to happen? Is serverless
 more expensive than a server-based approach?
@@ -24,7 +22,7 @@ more expensive than a server-based approach?
 Fortunately, "serverless" is a bit deceptive. A serverless application is simply an application where the developers
 don't have to worry about the underlying hardware powering their application. While a server-based approach would require
 a developer to worry about spinning up EC2 instances and scaling their EC2 fleet up and down, a serverless approach
-would abstract away all of these concerns. A serverless approach yields several benefits, including
+would abstract away all of these concerns. A serverless approach yields several benefits, including:
 
 1. Effortless scaling - No code or infrastructure needs to be developed to scale a service up or down. This is all handled 
 by the cloud provider (AWS).
@@ -68,40 +66,40 @@ sections. If you find yourself struggling, check out the S3 section of our works
 2. Create a new bucket
 3. Leave the "configure options" section with its preset values
 4. **Disable** block all public access, since we're only working with two files that need to be public anyways.
-5. Finish creation, and upload the `index.html` and `fridge.png` files provided in this directory of the repository, 
+5. Finish creation, and upload the [`index.html`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/index.html) and [`fridge.png`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/fridge.png) files provided in this directory of the repository, 
 granting public read access to both of them.
-6. Go to `fridge.png`'s properties, and update its metadata so that the `Content-Type` is "image/png".
+6. Go to [`fridge.png`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/fridge.png)'s properties, and update its metadata so that the `Content-Type` is "image/png".
 
 
 ## Creating a Lambda Function
-1. Head back over to the AWS console. You'll find Lambda under **Computer**, below EC2.
+1. Head back over to the AWS console. You'll find Lambda under **Compute**, below EC2 and Lightsail.
 2. Go to "Create a Function".
     1. Select "Author from Scratch"
     2. Name your function something descriptive (our code will be adding something to the fridge, so why not AddToFridge?)
     3. Choose **Python 3.7** as the runtime.
 3. After a few seconds, our Lambda function will be created and ready for configuration.
-4. The first thing we're going to do is make sure our Lambda function can actually access our S3 bucket. To do so, head over to the "Permissions" tab and click on the hyperlink to our execution role. This brings us to the IAM console, which will allow us to modify the policies of our Lambda's role.
+4. The first thing we're going to do is make sure our Lambda function can actually access our S3 bucket. To do so, head over to the "Configuration" tab and then the "Permissions" tab on the sidebar. Then click on the hyperlink to under "Execution role". This brings us to the IAM console, which will allow us to modify the policies of our Lambda's role.
 5. Press "Attach Policies", search for AmazonS3FullAccess, and add that policy to the executor role.
-6. With that out of the way, let's take a look at the `lambda_function.py` file located in this repository. It's not 
+6. With that out of the way, let's take a look at the [`lambda_function.py`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/lambda_function.py) file located in this repository. It's not 
 important to understand what's going on with the image manipulation code, but it is important to understand the code
 that interacts with our S3 bucket. 
-    * All Python lambda function files must be called `lambda_function.py`
+    * All Python lambda function files must be called [`lambda_function.py`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/lambda_function.py)
     * They must also have an entry function with the signature `lambda_handler(event, context)`
-7. Replace the bucket name with your actual bucket name and add `lambda_function.py` to `function.zip`
+7. Inside of the file, replace the bucket name on line 78 with the bucket name you created for this workshop and add [`lambda_function.py`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/lambda_function.py) to [`function.zip`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/function.zip)
     * This zip file contains the libraries you need to run this code on AWS Lambda. It was, in the most unparliamentary language,
     a MASSIVE pain in the ass to get PIL working with Lambda, so using this zip file will make your life much easier. 
     * On Linux and OS X, can do `zip -g function.zip lambda_function.py`
-    * Not sure on Windows, but all you have to do is replace the `lambda_function.py` in the zip file with your own
+    * Not sure on Windows, but all you have to do is replace the [`lambda_function.py`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/lambda_function.py) in the zip file with your own
 8. Head back to the configuration view in the Lambda console. Scroll down to the **Function code** section, go to **Actions**, 
 and select **Upload a .zip file**.
+8. To upload our zip file, go to **Code > Upload from > .zip file** and upload the zip file. 
 9. We need to increase the capacity and timeout of our Lambda function, since this task will take a bit long to perform.
-Go to **Basic settings**, press **Edit**, and set the memory to **512 MB** and the timeout to **2 minutes**
+Go to **Configuation**, press **Basic Configuation** on the sidebar, press **Edit**, and set the memory to **512 MB** and the timeout to **2 minutes**
     
 ## Creating an API for Our Lambda Function
 1. Head over to the AWS console. Scroll down to **Networking and Content Delivery**, where you'll find **API Gateway**,
 which is the service we'll be using to create an API endpoint for our Lambda function.
-2. Select **Build a REST API**.
-3. Create a **New API**, naming it something descriptive and leaving the two other fields as their defaults.
+2. Select **Create API**, then choose **REST API type**, and hit **Build**. Name it something descriptive and leaving the two other fields as their defaults and then hit **Create API**.
 4. Go to **Actions > Create Method > POST** and click the checkmark.
 5. Our integration type will be a **Lambda function**, we will **use Lambda proxy integration**, and our Lambda Function will be whatever we created earlier.
 6. Let's test our method. In the following screen, click "test" and add a request body with the format `{"image_url": "<url>"}`. If all goes well, you'll receive a status code of 200.
@@ -110,7 +108,7 @@ which is the service we'll be using to create an API endpoint for our Lambda fun
 
 ## Creating the Fridge Webpage
 
-Check out the `index.html` file in this repo to see how to integrate the API with an HTML file that you host on S3. Make sure to swap out the active API link! 
+Check out the [`index.html`](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/Serverless/index.html) file in this repo to see how to integrate the API with an HTML file that you host on S3. Make sure to swap out the active API link! 
 
 ## Room for Improvement
 This demo actually isn't perfect. Perhaps the most glaring issue pertains to security - making everything public in an S3
