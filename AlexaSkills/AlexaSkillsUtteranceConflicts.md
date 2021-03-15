@@ -1,4 +1,17 @@
 # Alexa Skills: Utterance Conflicts
+## Overview
+### What You'll Learn
+
+In this section you will learn:
+
+1. What utterance conflicts are
+2. How to resolve them
+
+### Prerequisites
+
+1. [Dialogue](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/AlexaSkills/Dialogue.md#dialogue)
+
+### Introduction
 
 When creating an Alexa Skill, you create "Utterances" that map to certain intents. Sometimes, you may unintentionally map a single utterance to more than one intent. The developer console has many built-in features to help find these conflicts.
 
