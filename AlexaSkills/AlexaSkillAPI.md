@@ -1,6 +1,16 @@
 # Alexa Skills: Making API Requests
-
 ## Overview
+### What You'll Learn
+
+In this section you will learn:
+
+1. How to integrate API requests into your Alexa Skills
+
+### Prerequisites
+
+1. [Dialogue](https://github.com/HackBinghamton/CloudComputingWorkshop/blob/master/AlexaSkills/Dialogue.md#dialogue)
+
+### Introduction
 
 So you have a great idea for an Alexa Skill, but realized that you will probably need to use an API to make it happen. 
 
